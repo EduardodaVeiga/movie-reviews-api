@@ -51,22 +51,22 @@ DATABASE_USERNAME
 DATABASE_PASSWORD 
 DATABASE_HOST 
 DATABASE_DIALECT 
-IMDB_API_KEY //Obtain an API key from The Movie Database (TMDB) API (https://www.themoviedb.org/documentation/api) and update the `config/tmdb.js` with your API key.
+IMDB_API_KEY //Obtain an API key from The Movie Database (TMDB) API (https://www.themoviedb.org/documentation/api).
 ```
 
 4. Run database migrations:
 
 ```
-npm run migrate
+npx sequelize-cli db:migrate
 ```
 
 5. Start the server:
 
 ```
-npm start
+npm run dev
 ```
 
-The API will be accessible at `http://localhost:3000`.
+The API will be accessible at `http://localhost:3009`.
 
 ## API Endpoints
 
