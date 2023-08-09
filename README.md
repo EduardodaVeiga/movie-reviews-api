@@ -66,13 +66,13 @@ npx sequelize-cli db:migrate
 npm run dev
 ```
 
-The API will be accessible at `http://localhost:3009`.
+The API will be accessible at `http://localhost:3009/`.
 
 ## API Endpoints
 
 1. **Review Submission Endpoint**:
 
-   - `POST /reviews`
+   - `POST /api/reviews`
 
      Example Request Body:
 
@@ -86,8 +86,8 @@ The API will be accessible at `http://localhost:3009`.
 
 2. **Review Retrieval Endpoints**:
 
-   - `GET /movies/{tmdbId}/reviews`: Fetch all reviews of a specific movie along with its information.
-   - `GET /users/{userName}/reviews`: Fetch all reviews submitted by a specific user.
+   - `GET /api/movies/{tmdbId}/reviews`: Fetch all reviews of a specific movie along with its information.
+   - `GET /api/users/{userName}/reviews`: Fetch all reviews submitted by a specific user.
 
 ## Examples
 
@@ -98,19 +98,19 @@ The API will be accessible at `http://localhost:3009`.
     "tmdbId": 100,
     "userName": "John Doe",
     "rating": 8
-  }' http://localhost:3000/reviews
+  }' http://localhost:3009/api/reviews
   ```
 
 - To retrieve reviews of a specific movie:
 
   ```bash
-  curl http://localhost:3000/movies/100/reviews
+  curl http://localhost:3009/api/movies/100/reviews
   ```
 
 - To retrieve reviews submitted by a specific user:
 
   ```bash
-  curl http://localhost:3000/users/John%20Doe/reviews
+  curl http://localhost:3009/api/users/John%20Doe/reviews
   ```
 
 ## Contributing
