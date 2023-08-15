@@ -34,13 +34,5 @@ app.use(function(req, res, next) {
   });
 });
 
-app.listen(port, (err) => {
-  if (err) {
-    console.log("Error ", err);
-  } else {
-    console.log("server is running on port ", port);
-  }
-});
-
 
 module.exports = app;

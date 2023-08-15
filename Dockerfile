@@ -9,4 +9,5 @@ COPY . .
 
 EXPOSE 3009
 
-CMD [ "./entrypoint.sh" ]
+CMD [ "sh", "entrypoint.sh" ]
+

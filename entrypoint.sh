@@ -8,5 +8,5 @@ npx sequelize-cli db:migrate
 sleep 5
 
 # Start server
-npm run dev
+npm start
 
