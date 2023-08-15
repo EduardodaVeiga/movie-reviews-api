@@ -27,6 +27,7 @@ To run this project, you need the following installed:
 
 - Node.js (https://nodejs.org/)
 - PostgreSQL database
+- Docker with docker-compose
 
 ## Installation
 
@@ -37,13 +38,7 @@ git clone https://github.com/EduardodaVeiga/movie-reviews-api.git
 cd movie-reviews-api
 ```
 
-2. Install dependencies:
-
-```
-npm install
-```
-
-3. Set up your .env file with the following variables: 
+2. Set up your .env file on the root directory with the following variables: 
 ```
 NODE_ENV 
 DATABASE_NAME 
@@ -54,16 +49,9 @@ DATABASE_DIALECT
 IMDB_API_KEY //Obtain an API key from The Movie Database (TMDB) API (https://www.themoviedb.org/documentation/api).
 ```
 
-4. Run database migrations:
-
+3. Run the command: 
 ```
-npx sequelize-cli db:migrate
-```
-
-5. Start the server:
-
-```
-npm run dev
+docker-compose up --build
 ```
 
 The API will be accessible at `http://localhost:3009/`.
