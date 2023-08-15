@@ -6,6 +6,7 @@ let DATABASE_USERNAME = process.env.DATABASE_USERNAME;
 let DATABASE_PASSWORD = process.env.DATABASE_PASSWORD;
 let DATABASE_HOST = process.env.DATABASE_HOST;
 let DATABASE_DIALECT = process.env.DATABASE_DIALECT;
+let DATABASE_PORT = process.env.DATABASE_PORT;
 
 
 const sequelize = new Sequelize(
@@ -14,6 +15,7 @@ const sequelize = new Sequelize(
   DATABASE_PASSWORD,
   {
     host: DATABASE_HOST,
+    port: DATABASE_PORT,
     dialect: DATABASE_DIALECT,
     keepDefaultTimezone: false,
     dialectOptions: {

@@ -38,7 +38,7 @@ class ReviewController {
             title: external_movie.title,
             release_date: external_movie.release_date,
             is_adult: external_movie.adult,
-            overview: external_movie.overview
+            overview: external_movie.overview 
           }, { transaction });
 
           await models.Review.create({
@@ -48,6 +48,7 @@ class ReviewController {
           }, { transaction });
         }
       } catch (error) {
+        console.log(error);
         await transaction.rollback();
         return res.status(500).json({ success: false, message: getMessage('exception_error') });
       }
