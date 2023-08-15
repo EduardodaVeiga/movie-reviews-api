@@ -25,9 +25,7 @@ This repository contains the implementation of a Movie Review Submission and Ret
 
 To run this project, you need the following installed:
 
-- Node.js (https://nodejs.org/)
-- PostgreSQL database
-- Docker with docker-compose
+- Docker with docker-compose (https://www.docker.com/)
 
 ## Installation
 
