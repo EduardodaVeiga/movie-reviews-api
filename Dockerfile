@@ -2,12 +2,12 @@ FROM node:16
 
 WORKDIR /app
 
-COPY ./package.json .
-RUN npm cache clean --force
-RUN npm install
+# copy app content
 COPY . .
 
-EXPOSE 3009
+# install and cache app dependencies
+RUN npm install --silent
 
+# start app
 CMD [ "sh", "entrypoint.sh" ]
 

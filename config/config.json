@@ -1,5 +1,13 @@
 {
-    "development": {
+  "localhost": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "movie-reviews",
+    "host": "postgres",
+    "dialect": "postgres",
+    "port": 5433
+  },
+  "development": {
       "username": "postgres",
       "password": "postgres",
       "database": "movie-reviews",

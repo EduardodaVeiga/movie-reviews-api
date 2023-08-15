@@ -7,7 +7,14 @@ services:
     depends_on:
       - postgres
     environment:
-      NODE_ENV: development
+      NODE_ENV: "${NODE_ENV}"
+      DATABASE_NAME: "${DATABASE_NAME}"
+      DATABASE_USERNAME: "${DATABASE_USERNAME}"
+      DATABASE_PASSWORD: "${DATABASE_PASSWORD}"
+      DATABASE_HOST: "${DATABASE_HOST}"
+      DATABASE_DIALECT: "${DATABASE_DIALECT}"
+      DATABASE_PORT: "${DATABASE_PORT}"
+      IMDB_API_KEY: "${IMDB_API_KEY}"
       PORT: 3009
     ports:
       - "3009:3009"
@@ -20,7 +27,7 @@ services:
     ports:
       - 5432:5433
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: movie-reviews
-      PGPORT: 5433
+      POSTGRES_USER: "${DATABASE_USERNAME}"
+      POSTGRES_PASSWORD: "${DATABASE_PASSWORD}"
+      POSTGRES_DB: "${DATABASE_NAME}"
+      PGPORT: "${DATABASE_PORT}"
