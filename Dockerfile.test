@@ -5,6 +5,9 @@ WORKDIR /app
 # copy app content
 COPY . .
 
+# Clear npm cache
+RUN npm cache clean --force
+
 # install and cache app dependencies
 RUN npm install --silent
 
