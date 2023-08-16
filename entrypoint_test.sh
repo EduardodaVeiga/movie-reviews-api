@@ -1,2 +1,2 @@
 #!/bin/bash
-npx sequelize-cli db:migrate && npm test
+sleep 5 && npx sequelize-cli db:migrate && npm test

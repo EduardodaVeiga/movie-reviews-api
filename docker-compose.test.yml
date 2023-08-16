@@ -5,6 +5,7 @@ services:
     ports:
       - 5434:5434
     environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
       POSTGRES_USER: "${TEST_DATABASE_USERNAME}"
       POSTGRES_PASSWORD: "${TEST_DATABASE_PASSWORD}"
       POSTGRES_DB: "${TEST_DATABASE_NAME}"
