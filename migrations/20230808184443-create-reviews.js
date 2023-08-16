@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -15,8 +15,8 @@ module.exports = {
         allowNull: false,
         references: {
           model: 'movies',
-          key: 'tmdbId',
-        },
+          key: 'tmdbId'
+        }
       },
       userName: {
         type: Sequelize.STRING,
@@ -34,9 +34,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    })
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Reviews');
+    await queryInterface.dropTable('Reviews')
   }
-};
+}

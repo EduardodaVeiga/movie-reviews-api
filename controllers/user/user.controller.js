@@ -1,6 +1,6 @@
-const { validationResult } = require("express-validator");
-const { getMessage } = require("../../helpers/message_helper");
-const models = require("../../models/index")
+const { validationResult } = require('express-validator')
+const { getMessage } = require('../../helpers/message_helper')
+const models = require('../../models/index')
 
 class UserController {
   /**
@@ -10,12 +10,12 @@ class UserController {
  * @date 08th August 2023
  * @updated 08th August 2023
  */
-  static async retrieveReviewsByUser(req, res) {
+  static async retrieveReviewsByUser (req, res) {
     const { errors } = validationResult(req)
 
     if (errors.length > 0) {
-      console.log(errors);
-      return res.status(400).json({ error: getMessage('invalid_parameters') });
+      console.log(errors)
+      return res.status(400).json({ error: getMessage('invalid_parameters') })
     }
     const { userName } = req.params
     let reviews
@@ -26,13 +26,13 @@ class UserController {
         }
       })
     } catch (error) {
-      return res.status(500).json({ success: false, message: getMessage('exception_error') });
+      return res.status(500).json({ success: false, message: getMessage('exception_error') })
     }
-    if(reviews.length == 0) {
-      return res.status(204).json();
+    if (reviews.length === 0) {
+      return res.status(204).json()
     }
-    return res.status(200).json({ success: true, data: reviews});
+    return res.status(200).json({ success: true, data: reviews })
   }
 }
 
-module.exports = UserController;
+module.exports = UserController

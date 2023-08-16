@@ -1,0 +1,28 @@
+version: "3"
+services:
+  postgres_test:
+    image: postgres:11
+    ports:
+      - 5434:5434
+    environment:
+      POSTGRES_USER: "${TEST_DATABASE_USERNAME}"
+      POSTGRES_PASSWORD: "${TEST_DATABASE_PASSWORD}"
+      POSTGRES_DB: "${TEST_DATABASE_NAME}"
+      PGPORT: "${TEST_DATABASE_PORT}"
+  app-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    volumes:
+      - .:/app
+    depends_on:
+      - postgres_test
+    environment:
+      NODE_ENV: "test"
+      DATABASE_NAME: "${TEST_DATABASE_NAME}"
+      DATABASE_USERNAME: "${TEST_DATABASE_USERNAME}"
+      DATABASE_PASSWORD: "${TEST_DATABASE_PASSWORD}"
+      DATABASE_HOST: "${TEST_DATABASE_HOST}"
+      DATABASE_DIALECT: "${TEST_DATABASE_DIALECT}"
+      DATABASE_PORT: "${TEST_DATABASE_PORT}"
+      IMDB_API_KEY: "${IMDB_API_KEY}"

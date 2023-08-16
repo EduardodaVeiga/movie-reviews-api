@@ -1,4 +1,4 @@
-const appMessages = require("../config/message");
+const appMessages = require('../config/message')
 /**
  * MessageHelper
  * @description Server-side messages for incoming requests.
@@ -7,30 +7,29 @@ const appMessages = require("../config/message");
 
 class MessageHelper {
   /**
-   * @param message_slug  string value
+   * @param messageSlug  string value
    * @param language  string value
    * @description Method to get a response message
    */
-  static getMessage(message_slug = "general_error", language = "english") {
-    if (language.toLowerCase() == "english") {
-      return appMessages.message.english[message_slug];
+  static getMessage (messageSlug = 'general_error', language = 'english') {
+    if (language.toLowerCase() === 'english') {
+      return appMessages.message.english[messageSlug]
     }
-    return appMessages.message.english.language_error;
+    return appMessages.message.english.language_error
   }
 
-  static checkLanguage(req) {
-    const headers = req.headers;
-    let language = "english";
+  static checkLanguage (req) {
+    const headers = req.headers
+    let language = 'english'
     if (
-      headers["x-language"] !== undefined &&
-      headers["x-language"] !== null &&
-      headers["x-language"] !== ""
+      headers['x-language'] !== undefined &&
+      headers['x-language'] !== null &&
+      headers['x-language'] !== ''
     ) {
-      language = headers["x-language"];
+      language = headers['x-language']
     }
-    return language;
+    return language
   }
-
 }
 
-module.exports = MessageHelper;
+module.exports = MessageHelper

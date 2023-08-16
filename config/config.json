@@ -18,10 +18,10 @@
     "test": {
       "username": "postgres",
       "password": "postgres",
-      "database": "movie-reviews",
-      "host": "postgres",
+      "database": "movie-reviews-test",
+      "host": "postgres_test",
       "dialect": "postgres",
-      "port": 5433
+      "port": 5434
     },
     "production": {
       "username": "postgres",

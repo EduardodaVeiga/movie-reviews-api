@@ -1,5 +1,5 @@
-"use strict";
-const { Model } = require("sequelize")
+'use strict'
+const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class Movie extends Model {
     /**
@@ -7,13 +7,13 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate(models) {
+    static associate (models) {
       // Define association with Review model
       Movie.hasMany(models.Review, {
-        foreignKey: "tmdbId", // This should match the column name in the Review table
-        sourceKey: "tmdbId", // This should match the column name in the Movie table
-        as: "reviews", // Set an alias for the association
-      });
+        foreignKey: 'tmdbId', // This should match the column name in the Review table
+        sourceKey: 'tmdbId', // This should match the column name in the Movie table
+        as: 'reviews' // Set an alias for the association
+      })
     }
   }
   Movie.init(
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         primaryKey: true,
         type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4(),
+        defaultValue: DataTypes.UUIDV4()
       },
       tmdbId: {
         allowNull: false,
@@ -36,21 +36,20 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.DATEONLY
       },
-      is_adult:{
+      is_adult: {
         allowNull: false,
         type: DataTypes.BOOLEAN
       },
-      overview:{
+      overview: {
         allowNull: false,
         type: DataTypes.TEXT
       }
     },
     {
       sequelize,
-      modelName: "Movie",
-      tableName: "movies",
+      modelName: 'Movie',
+      tableName: 'movies'
     }
-  );
-  return Movie;
-};
-
+  )
+  return Movie
+}
