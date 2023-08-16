@@ -38,21 +38,39 @@ cd movie-reviews-api
 
 2. Set up your .env file on the root directory with the following variables: 
 ```
-NODE_ENV 
-DATABASE_NAME 
-DATABASE_USERNAME 
-DATABASE_PASSWORD 
-DATABASE_HOST 
-DATABASE_DIALECT 
 IMDB_API_KEY //Obtain an API key from The Movie Database (TMDB) API (https://www.themoviedb.org/documentation/api).
+NODE_ENV 
+
+#LOCALHOST VARIABLES
+ 
+DATABASE_NAME = movie-reviews
+DATABASE_USERNAME = postgres
+DATABASE_PASSWORD = postgres
+DATABASE_HOST = postgres
+DATABASE_DIALECT = postgres
+DATABASE_PORT = 5433
+
+#TEST VARIABLES
+
+TEST_DATABASE_NAME = movie-reviews-test
+TEST_DATABASE_USERNAME = postgres
+TEST_DATABASE_PASSWORD = postgres
+TEST_DATABASE_HOST = postgres_test
+TEST_DATABASE_DIALECT = postgres
+TEST_DATABASE_PORT = 5434
 ```
 
-3. Run the command: 
+3. Run the command for app run: 
 ```
-docker-compose up --build
+docker-compose up --build 
 ```
 
 The API will be accessible at `http://localhost:3009/`.
+
+4. If you want only to run tests, run the following:
+```
+docker-compose -f docker-compose.test.yml up
+```
 
 ## API Endpoints
 
