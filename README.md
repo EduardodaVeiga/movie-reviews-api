@@ -62,7 +62,7 @@ TEST_DATABASE_PORT = 5434
 
 3. Run the command for app run: 
 ```
-docker-compose up --build 
+docker-compose up
 ```
 
 The API will be accessible at `http://localhost:3009/`.
